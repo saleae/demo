@@ -19,10 +19,10 @@ etc
 
 We want to search this data with a simple search bar, and have the results populate below as we type, instantly.
 
-1. import.js (run as 'node import')
+### import.js (run as 'node import')
 First, let's get this csv file pulled into a database so that we can text search it quickly. Any database you like. Single column of data (ignore the csv delimiter, we'll just treat it as lines of regular text).  Index the column so that it'll be fast to do text searches. Save the resulting database to a file so we can load it later.
 
-2. search.html, search.js (run from the browser)
+### search.html, search.js (run from the browser)
 Using react or angular, make a page that has a search field, and a large text box for the results.
 
 - Start so what you type in the the search bar shows up in the results box in real time, to check that things are working.
@@ -31,7 +31,7 @@ Using react or angular, make a page that has a search field, and a large text bo
 ## Interactive display
 The data folder, the file analog_data.csv contains analog waveform data.  We'll want to draw this on the browser screen.
 
-draw.html, draw.js (run from the browser)
+### draw.html, draw.js (run from the browser)
 - Create a canvas element that's 800x600. (or something else)
 - Draw a little circle on the canvas, 3x3 px and green (or whatever you like).
 - import, and draw all the points in the analog_data.csv file, such that the entire set fits perfectly into the canvas.
