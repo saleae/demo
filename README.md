@@ -1,7 +1,7 @@
 # Computer setup
 - Your favorite IDE for javascript/web development
 - Your favorite browser (to debug/run web apps)
-- Node.js, NPM
+- Node.js, NPM, Git
 - Your favorite database for use with javascript (Mongo, etc)
 - The zoom meeting client (https://zoom.us/download)
 - Ideally, your PC microphone/headphones/speakers set up to work well with an online meeting
@@ -16,7 +16,6 @@
 - using react/angular to search and display results from the table
 - drawing to HTML canvas
 - using mouse input to scale/move the drawing
-
 
 # Fast database search
 Please download and extract this zip file: https://www.dropbox.com/s/7oxf6xmnp9xtye4/jtag_10E6_rows.zip?dl=0
