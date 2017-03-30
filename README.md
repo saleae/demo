@@ -29,7 +29,7 @@ Using react or angular, make a page that has a search field, and a large text bo
 - Now, make it so that each time the search field is updated in any way, the first 25 results which contain the exact search string, are populated in the results box. (previous results are cleared).
 
 ## Interactive display
-The data folder, the file analog_data.csv contains analog waveform data.  We'll want to draw this on the browser screen.
+In the data folder, the file analog_data.csv contains analog waveform data.  Let's draw this on the browser screen.
 
 ### draw.html, draw.js (run from the browser)
 - Create a canvas element that's 800x600. (or something else)
