@@ -1,3 +1,23 @@
+# Computer setup
+- Your favorate IDE for javascript/web development
+- Your favorate browser (to debug/run web apps)
+- Node.js, NPM
+- Your favorate database for use with javascript (Mongo, etc)
+- The zoom meeting client (https://zoom.us/download)
+- Ideally, your PC microphone/headphones/speakers set up to work well with an online meeting
+
+# Joining the call
+- Please join the meeting using the zoom URL in the calender invite.  
+- If your PC audio is NOT set up, please call us at the number in the invite.
+- Once the call starts, please share your screen with us. 
+
+# What to expect
+- getting data from a file into a database, and indexing the table for text search
+- using react/angular to search and display results from the table
+- drawing to HTML canvas
+- using mouse input to scale/move the drawing
+
+
 # Fast database search
 Please download and extract this zip file: https://www.dropbox.com/s/7oxf6xmnp9xtye4/jtag_10E6_rows.zip?dl=0
 
