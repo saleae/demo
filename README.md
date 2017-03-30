@@ -1,8 +1,8 @@
 # Computer setup
-- Your favorate IDE for javascript/web development
-- Your favorate browser (to debug/run web apps)
+- Your favorite IDE for javascript/web development
+- Your favorite browser (to debug/run web apps)
 - Node.js, NPM
-- Your favorate database for use with javascript (Mongo, etc)
+- Your favorite database for use with javascript (Mongo, etc)
 - The zoom meeting client (https://zoom.us/download)
 - Ideally, your PC microphone/headphones/speakers set up to work well with an online meeting
 
