@@ -3,6 +3,7 @@ Please download and extract this zip file: https://www.dropbox.com/s/7oxf6xmnp9x
 
 It contains a text dump of some decoded protocol data. It's ~350MB in size. Here's what it looks like:
 
+```
 Time [s];TAP state;TDI;TDO
 0.000000000000000;Run-Test/Idle;;
 0.000303400000000;Select-DR-Scan;;
@@ -14,6 +15,7 @@ Time [s];TAP state;TDI;TDO
 0.000322600000000;Capture-IR;;
 0.000325000000000;Shift-IR;0x01;0x50
 etc
+```
 
 We want to search this data with a simple search bar, and have the results populate below as we type, instantly.
 
