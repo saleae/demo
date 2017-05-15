@@ -20,7 +20,7 @@
 - minimal/no starting boilerplate
 - web search ok
 
-# Growth Experiment Demo
+# Growth Experiment Project
 
 ## The situation
 
@@ -29,7 +29,7 @@ We want to understand why people are visiting our website.  In particular, do th
 We want to build a widget that will ask people, so we can get a better idea what's going on. 
 
 ## The starting point
-We have a basic site on a Node/Express server.  Just a single page, for now. It's this page we want to add our widget ti.
+We have a basic site on a Node/Express server.  Just a single page, for now. It's this page we want to add our widget to.
 
 ## Primary Requirements
 - The widget should be a bar, stuck to the bottom of the screen as the user scrool.
@@ -44,4 +44,3 @@ We have a basic site on a Node/Express server.  Just a single page, for now. It'
 - The script/code for this widget should not download or execute entire until the existing page is complely done rendering for the user.
 - The widget should remember if it has already been closed (for any reason) and so stay closed forever (or at least 60 days) for that user. 
 - When collapsing/hiding the widget should animate down nicely.
-
