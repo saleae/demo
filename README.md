@@ -1,34 +1,32 @@
-# Git Instructions
+## What to expect
+Part one, <= 50 minutes:
+- basic data structures/algorithms on coder pad
+Part two, <= 50 minutes
+- basic single-page application with react, node, and mongo/mysql;
+- working react, node boilerplate provided
+- connection boilerplate provided to hosted mysql/mongo.
+- web search ok
+
+## Git Instructions (for part two)
 1. Share your git username with us, we will add you to this repo
 2. Clone the repo to your local machine
-3. Create (and switch to) new branch, with your name ("ron-branch", etc)
+3. Create (and switch to) new branch, with your name ("myname-branch", etc)
 4. Finish the project.
 5. Check in your branch.
 6. Issue a pull request to merge your branch into master.
 
-Thats it!
-
-# Setup
-## Computer setup
+## Computer setup (for part two)
 - Your favorite IDE/editor for JavaScript/web development
 - Your favorite browser (to debug/run web apps)
 - Git
 - Node
-- Mongo (or other)
-- React
-- Jasmine (or other)
 - The zoom meeting client (https://zoom.us/download)
 - Ideally, your PC microphone/headphones/speakers set up to work well with an online meeting
 
 ## Joining the call
 - Please join the meeting using the zoom URL in the calendar invite.  
 - If your PC audio is NOT set up, please call us at the number in the invite.
-- Once the call starts, please share your screen with us. 
-
-## What to expect
-- basic single-page application with react, node, and mongo;
-- minimal/no starting boilerplate
-- web search ok
+- Once the call starts, please share your screen with us.
 
 # Growth Experiment Project
 
