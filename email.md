@@ -20,7 +20,7 @@ Part two: (<50 minutes)
 - connection boilerplate provided to hosted mysql/mongo.
 - web search ok
 
-1. Computer setup:
+5. Computer setup:
 
 - Your favorite IDE/editor for JavaScript/web development
 - Your favorite browser (to debug/run web apps)
