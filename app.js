@@ -5,8 +5,13 @@ var mysql = require('mysql');
 
 //Static Files
 app.use(express.static('public'));
+
 app.get('/', function (req, res) { 
     res.sendFile(`${__dirname}/public/index.html`); 
+});
+
+app.get('/api/test', function(req, res){
+  res.status(200).send('hello from the server 2');
 });
 
 var mongo_url = 'mongodb://u9nk7zFl225V:GzfZkYr5tDfa@ds153392.mlab.com:53392/saleae_sandbox';
@@ -32,6 +37,6 @@ connection.connect(function(err) {
       console.error('error connecting: ' + err.stack);
   }
 });
-
-app.listen(3000);
+console.log('listening on port 3001');
+app.listen(3001);
 
