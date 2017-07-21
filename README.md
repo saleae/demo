@@ -2,7 +2,7 @@
 Part one, <= 50 minutes:
 - basic data structures/algorithms on coder pad
 Part two, <= 50 minutes
-- basic single-page application with react, node, and mongo/mysql;
+- basic single-page application with react, node, and mongo; (optionally angular, vue, and/or mysql)
 - working react, node boilerplate provided
 - connection boilerplate provided to hosted mysql/mongo.
 - web search ok
