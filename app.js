@@ -7,16 +7,16 @@ var bodyParser = require('body-parser')
 // parse application/json 
 app.use(bodyParser.json());
 
+
+
 //Static Files
 app.use(express.static('public'));
 
-app.get('/', function (req, res) { 
-    res.status(200).send('The index page is not accessable due to the proxy rules in package.json');
+app.get('/test', function (req, res) { 
+    res.status(200).send('test');
 });
+  
 
-app.get('/api/test', function(req, res){
-  res.status(200).send('hello from the server');
-});
 
 var mongo_url = 'mongodb://u9nk7zFl225V:GzfZkYr5tDfa@ds153392.mlab.com:53392/saleae_sandbox';
 mongo.connect(mongo_url, function(err, db) {
@@ -43,5 +43,5 @@ connection.connect(function(err) {
   }
 });
 */
-console.log('listening on port 3001');
-app.listen(3001);
+console.log('listening on port 3000');
+app.listen(3000);
