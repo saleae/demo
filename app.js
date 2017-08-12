@@ -3,27 +3,41 @@ let app = express();
 var mongo = require('mongodb').MongoClient;
 var mysql = require('mysql');
 var bodyParser = require('body-parser')
+const assert = require('http-assert')
+let db
+let collection
+const possibleReasons = ['purchase', 'other']
 
-// parse application/json 
+// parse application/json
 app.use(bodyParser.json());
 
 //Static Files
 app.use(express.static('public'));
 
-app.get('/', function (req, res) { 
-    res.status(200).send('The index page is not accessable due to the proxy rules in package.json');
-});
+app.post('/api/user/visit-dialog', function(req, res){
+  if (!db) return res.status(500).send({ message: 'Database is not yet connected. Please try again later.' })
+  const { reason } = req.body
+  console.log(req.body)
+  if (!possibleReasons.includes(reason)) return res.status(400).send({ message: 'That\'s not a valid reason!' })
+  collection.insertOne({
+    ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+    timestamp: new Date(),
+    reason: reason
+  }, function (err, result) {
+    if (err) return res.status(500, { message: err.message })
+    res.status(200).send({ successful: true });
+  })
+})
 
-app.get('/api/test', function(req, res){
-  res.status(200).send('hello from the server');
-});
-
-var mongo_url = 'mongodb://u9nk7zFl225V:GzfZkYr5tDfa@ds153392.mlab.com:53392/saleae_sandbox';
-mongo.connect(mongo_url, function(err, db) {
-  if(!err){
-    console.log("Connected successfully to mongo database");
-    db.close();
+var mongo_url = 'mongodb://localhost:27017';
+mongo.connect(mongo_url, function(err, dbInstance) {
+  if(err) {
+    console.error('connection failed', err)
+    return
   }
+  console.log("Connected successfully to mongo database");
+  db = dbInstance
+  collection = db.collection('userVisitingReasons')
 });
 
 // hosted SQL not currently availible. To use MySQL, run locally and place your connection information here
