@@ -3,7 +3,6 @@ let app = express();
 var mongo = require('mongodb').MongoClient;
 var mysql = require('mysql');
 var bodyParser = require('body-parser')
-const assert = require('http-assert')
 let db
 let collection
 const possibleReasons = ['purchase', 'other']
