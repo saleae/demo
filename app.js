@@ -4,6 +4,8 @@ var mongo = require('mongodb').MongoClient;
 var mysql = require('mysql');
 var bodyParser = require('body-parser')
 
+var mongoDB;
+
 // parse application/json 
 app.use(bodyParser.json());
 
@@ -18,10 +20,38 @@ app.get('/api/test', function(req, res){
   res.status(200).send('hello from the server');
 });
 
+app.post('/api/feedback', function(req, res){
+  const feedback = mongoDB.collection('feedback');
+
+  try {
+    feedback.insertOne({
+      response: body.action,
+      createdAt: new Date(),
+    }).then(function (result) {
+      res.status(200).send(JSON.stringify(result));
+    })
+  } catch(e) {
+    res.status(500).send('error');
+  }
+});
+
+app.get('/api/feedback', function(req, res){
+  const feedback = mongoDB.collection('feedback');
+  const all = feedback.find({});
+
+  all.toArray(function(err, results) {
+    const json = JSON.stringify(results)
+    res.status(200).send(json);
+  })
+});
+
 var mongo_url = 'mongodb://u9nk7zFl225V:GzfZkYr5tDfa@ds153392.mlab.com:53392/saleae_sandbox';
 mongo.connect(mongo_url, function(err, db) {
   if(!err){
     console.log("Connected successfully to mongo database");
+    mongoDB = db;
+  } else {
+    console.log("Mongo error", err);
     db.close();
   }
 });

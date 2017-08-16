@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import classNames from 'classnames'
+import classNames from 'classnames';
+import createFeedback from './api/feedback';
 
 class Banner extends Component {
   constructor (props) {
@@ -17,11 +18,16 @@ class Banner extends Component {
 
   handlePurchaseClick (e) {
     e.preventDefault()
+
+    createFeedback('purchase')
+
     this.sayThanks()
   }
 
   handleOtherClick (e) {
     e.preventDefault()
+
+    createFeedback('other')
 
     this.sayThanks()
   }
