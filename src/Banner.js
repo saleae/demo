@@ -6,33 +6,46 @@ class Banner extends Component {
     super(props)
     this.state = {
       visible: true,
+      thanks: false,
     }
 
     this.handlePurchaseClick = this.handlePurchaseClick.bind(this)
-    this.handleOtherClick = this.handleCloseClick.bind(this)
+    this.handleOtherClick = this.handleOtherClick.bind(this)
     this.handleCloseClick = this.handleCloseClick.bind(this)
-    this.hideBanner = this.hideBanner.bind(this)
+    this.sayThanks = this.sayThanks.bind(this)
   }
 
   handlePurchaseClick (e) {
-    console.log('purchase click')
+    e.preventDefault()
+    this.sayThanks()
   }
 
   handleOtherClick (e) {
-    console.log('other click')
+    e.preventDefault()
+
+    this.sayThanks()
   }
 
   handleCloseClick (e) {
     e.preventDefault()
-    console.log('close click')
-    console.log('this', this)
-    this.hideBanner()
-  }
 
-  hideBanner () {
     this.setState({
       visible: false
     })
+  }
+
+  sayThanks () {
+    if (this.state.thanks) return
+
+    this.setState({
+      thanks: true,
+    })
+
+    setTimeout(function () {
+      this.setState({
+        visible: false,
+      })
+    }.bind(this), 1000)
   }
 
   render() {
@@ -42,22 +55,27 @@ class Banner extends Component {
 
     return (
       <div className={classes}>
-        <button
-          onClick={this.handlePurchaseClick}
-        >
-          {"I'm considering a purchase"}
-        </button>
+        {this.state.thanks
+          ? <div>Thanks</div>
+          : <div>
+            <button
+              onClick={this.handlePurchaseClick}
+            >
+              {"I'm considering a purchase"}
+            </button>
 
-        <button
-          onClick={this.handleOtherClick}
-        >
-          {"I'm here for another reason"}
-        </button>
-        <button 
-          onClick={this.handleCloseClick}
-        >
-          x
-        </button>
+            <button
+              onClick={this.handleOtherClick}
+            >
+              {"I'm here for another reason"}
+            </button>
+            <button
+              onClick={this.handleCloseClick}
+            >
+              x
+            </button>
+          </div>
+        }
       </div>
     );
   }
