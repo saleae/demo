@@ -19,7 +19,9 @@
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.10"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "classnames": "^2.2.5"
+  },
   "scripts": {
     "start": "react-scripts start",
     "start-dev": "nf start -p 3000",

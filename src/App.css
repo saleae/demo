@@ -22,3 +22,17 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.Banner {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  padding: 1rem;
+  display: none;
+}
+
+.Banner.is-visible {
+  display: block;
+}
