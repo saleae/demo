@@ -18,6 +18,47 @@
   font-size: large;
 }
 
+.intentBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: #ccc;
+  color: #fff;
+  z-index: 1000;
+  text-align: center;
+  transition: transform 1s ease-in-out;
+  transform: translateY(0);
+}
+
+.intentBar--slide-out {
+  transform: translateY(100%);
+}
+
+.intentBar__option {
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid white;
+  padding: 5px;
+  text-align: center;
+  margin-right: 20px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.intentBar__close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  padding: 5px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  border: 1px solid white;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
