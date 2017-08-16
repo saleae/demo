@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import createFeedback from './api/feedback';
 
+const feedbackClosed = 'FEEDBACK_CLOSED';
+
 class Banner extends Component {
   constructor (props) {
     super(props)
@@ -14,6 +16,16 @@ class Banner extends Component {
     this.handleOtherClick = this.handleOtherClick.bind(this)
     this.handleCloseClick = this.handleCloseClick.bind(this)
     this.sayThanks = this.sayThanks.bind(this)
+    this.saveCloseTime = this.saveCloseTime.bind(this)
+  }
+
+  componentDidMount () {
+    const timeClosed = localStorage.getItem(feedbackClosed)
+    if (!timeClosed) return;
+
+    this.setState({
+      visible: false
+    })
   }
 
   handlePurchaseClick (e) {
@@ -22,6 +34,7 @@ class Banner extends Component {
     createFeedback('purchase')
 
     this.sayThanks()
+    this.saveCloseTime()
   }
 
   handleOtherClick (e) {
@@ -30,6 +43,7 @@ class Banner extends Component {
     createFeedback('other')
 
     this.sayThanks()
+    this.saveCloseTime()
   }
 
   handleCloseClick (e) {
@@ -38,6 +52,11 @@ class Banner extends Component {
     this.setState({
       visible: false
     })
+    this.saveCloseTime()
+  }
+
+  saveCloseTime () {
+    localStorage.setItem(feedbackClosed, Date.now())
   }
 
   sayThanks () {
@@ -51,7 +70,7 @@ class Banner extends Component {
       this.setState({
         visible: false,
       })
-    }.bind(this), 1000)
+    }.bind(this), 3000)
   }
 
   render() {

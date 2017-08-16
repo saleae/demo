@@ -26,13 +26,13 @@
 .Banner {
   position: fixed;
   z-index: 100;
-  bottom: 0;
+  bottom: -100px;
   width: 100%;
   background-color: white;
-  padding: 1rem;
-  display: none;
+  padding: 2rem;
+  transition: bottom 5s;
 }
 
 .Banner.is-visible {
-  display: block;
+  bottom: 0;
 }
